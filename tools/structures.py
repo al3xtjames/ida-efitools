@@ -81,7 +81,7 @@ def _update_structs_from_track(track):
                     isinstance(track[op.reg], Structure):
                 if track[op.reg].dummy:
                     _guess_struct_field(item, op, track[op.reg])
-                OpStroff(item.ea, op.n, track[op.reg].sid)
+                OpStroff(item.insn, op.n, track[op.reg].sid)
 
         for obj, state in track.items():
 

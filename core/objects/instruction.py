@@ -1,10 +1,8 @@
 import re
+import idautils
 from itertools import count
-
 from idaapi import *
-from idautils import *
 from idc import *
-
 from .register import Register
 
 
@@ -35,6 +33,10 @@ class Instruction:
     @property
     def ea(self):
         return self.__ea
+
+    @property
+    def insn(self):
+        return idautils.DecodeInstruction(self.__ea)
 
     @property
     def mnem(self):
